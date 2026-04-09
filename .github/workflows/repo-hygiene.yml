@@ -1,0 +1,29 @@
+name: 仓库基础卫生检查
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  repo-hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: 校验文档骨架
+        run: ./scripts/check-docs.sh
+
+      - name: 校验仓库基础卫生
+        run: ./scripts/check-repo-hygiene.sh
+
+      - name: Shell 语法检查
+        run: |
+          while IFS= read -r file; do
+            bash -n "$file"
+          done < <(find scripts -type f -name '*.sh' | sort)
+
+      - name: Markdown 检查
+        uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e # v20
+        with:
+          globs: |
+            **/*.md
