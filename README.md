@@ -1,5 +1,7 @@
 # harness-template-cn
 
+English version: [`harness-template`](https://github.com/iFurySt/harness-template)
+
 ## 简介
 
 一个面向 Agent 协作开发的基础仓库模板，可以用来启动任何你想做的产品或服务。
