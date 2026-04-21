@@ -12,9 +12,8 @@ English version: [`harness-template`](https://github.com/iFurySt/harness-templat
 
 ## 许可证
 
-[MIT](/Users/bytedance/projects/github/harness-template-cn/LICENSE)
+[MIT](LICENSE)
 
 ## 备注
 
-这套方法主要来自我们自己的持续实践和整理，同时也吸收了 OpenAI 在 harness engineering 文章中的一部分思路，最后汇总成了这个模板：
-https://openai.com/index/harness-engineering/
+这套方法主要来自我们自己的持续实践和整理，同时也吸收了 OpenAI 在 [harness engineering 文章](https://openai.com/index/harness-engineering/) 中的一部分思路，最后汇总成了这个模板。
