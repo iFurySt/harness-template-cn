@@ -8,7 +8,16 @@ English version: [`harness-template`](https://github.com/iFurySt/harness-templat
 
 ## 快速开始
 
-直接 clone 或 fork 这个仓库，然后把它作为新项目的起点，继续往里搭你真正要做的产品、服务或平台能力即可。
+可以在这个仓库右上角直接使用 GitHub 的模板流程：
+
+1. 选择 **Use this template**。
+2. 选择 [**Create a new repository**](https://github.com/new?template_name=harness-template-cn&template_owner=iFurySt)。
+
+也可以在新仓库或已有仓库里用 `harness-cli` 初始化：
+
+```sh
+harness-cli init --language zh
+```
 
 ## 许可证
 
