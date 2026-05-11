@@ -13,11 +13,19 @@ English version: [`harness-template`](https://github.com/iFurySt/harness-templat
 1. 选择 **Use this template**。
 2. 选择 [**Create a new repository**](https://github.com/new?template_name=harness-template-cn&template_owner=iFurySt)。
 
-也可以在新仓库或已有仓库里用 `harness-cli` 初始化：
+也可以在新仓库或已有仓库里用 [`harness-cli`](https://github.com/iFurySt/harness-cli) 初始化。先通过 npm 安装：
+
+```sh
+npm install -g @ifuryst/harness-cli
+```
+
+然后运行：
 
 ```sh
 harness-cli init --language zh
 ```
+
+`harness-cli` 需要 Node.js 18+，并且本机 `PATH` 中需要有 Go。
 
 ## 许可证
 
