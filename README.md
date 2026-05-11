@@ -27,6 +27,21 @@ harness-cli init --language zh
 
 `harness-cli` 需要 Node.js 18+，并且本机 `PATH` 中需要有 Go。
 
+## 你会得到什么
+
+- 通过 `AGENTS.md` 和 `CLAUDE.md` 提供的 Agent 入口。
+- 覆盖架构、产品判断、前端、可靠性、安全、CI/CD 和供应链安全的仓库内文档骨架。
+- 位于 `docs/` 下的 execution plan、change history、release note 和 reference docs 骨架。
+- 默认 CI、release 和供应链安全 workflow，并且 GitHub Actions 已固定到 commit SHA。
+- 用于仓库检查、history、plan 和模板初始化的轻量脚本与 `make` 命令。
+
+## 前 10 分钟建议
+
+1. 先替换 `CODEOWNERS`、`docs/ARCHITECTURE.md`、`docs/product-specs/` 等模板占位内容。
+2. 运行 `make ci`，并把它作为 Agent 发 PR 前默认要跑的基线命令。
+3. 先补第一个真实产品流程和验收标准，再开始扩展实现。
+4. 更新 `docs/QUALITY_SCORE.md`，把新项目最薄弱的地方写清楚，方便后续任务接上。
+
 ## 许可证
 
 [MIT](LICENSE)
