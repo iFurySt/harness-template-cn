@@ -23,8 +23,8 @@
 - `docs/PRODUCT_SENSE.md`：产品价值、取舍方式和优先级判断。
 - `docs/RELIABILITY.md`：运行稳定性、观测性和上线前的基本要求。
 - `docs/SECURITY.md`：认证、数据处理、外部集成等安全默认约束。
-- `docs/SUPPLY_CHAIN_SECURITY.md`：依赖、SBOM、制品 provenance 和仓库级供应链安全默认做法。
-- `docs/CICD.md`：仓库的 CI/CD 骨架以及后续如何接入真实项目。
+- `docs/SUPPLY_CHAIN_SECURITY.md`：依赖、SBOM、制品 provenance 和供应链安全接入建议。
+- `docs/CICD.md`：当前 CI/CD 状态以及后续如何接入真实项目。
 - `docs/FRONTEND.md`：如果仓库包含前端界面，这里记录对应规范。
 - `CONTRIBUTING.md`：提 PR 前后的默认检查项和协作要求。
 - `docs/releases/README.md`：如何维护面向用户的发布记录。

@@ -1,36 +1,29 @@
 # CI/CD 说明
 
-这个模板自带一套不依赖具体语言栈的 CI/CD 骨架。
+这个模板当前不再内置 GitHub Actions CI/CD 骨架。
 
-## 默认包含的内容
+## 当前状态
 
-- `ci.yml`：仓库级检查，覆盖 docs、repo hygiene、Markdown 和 shell 脚本校验。
-- `supply-chain-security.yml`：在 PR 上做依赖变更检查，并在 PR、定时任务和手动触发时运行 OSV 扫描。
-- `release.yml`：手动触发的 release 流水线，用来打包仓库级制品、生成 provenance，并创建 GitHub Release。
+- `.github/workflows/` 下没有默认 workflow。
+- 仓库不再提供 `make ci`、`scripts/ci.sh` 或 `scripts/release-package.sh`。
+- 具体项目落地后，再按真实技术栈补回测试、构建、扫描、发布和部署流水线。
 
 ## 设计原则
 
-这套默认流水线的目标，是在项目真正成形前先把交付链路搭起来，而不是假装已经知道未来项目该怎么 build 和 deploy。
+CI/CD 应该服务真实项目，而不是在模板阶段保留一套无人维护的占位流程。
 
-当新项目的技术栈确定后，你应该把 `scripts/release-package.sh` 里的占位打包逻辑替换成真实构建产物，而不是另起一套平行流程。
-
-所有 GitHub Actions 都已经 pin 到 commit SHA。后续升级 action 时，也要继续保持这个约束。
+当新项目的技术栈确定后，优先补一条最小但真实的验证链路，再逐步加入构建产物、供应链扫描、release 和部署。新增 GitHub Actions 时，仍应固定到 commit SHA，避免使用浮动 tag。
 
 ## 推荐接入顺序
 
-1. 保留 `ci.yml`，作为唯一默认常驻的仓库基础门禁。
-2. 在 `scripts/ci.sh` 里继续叠加项目自己的验证命令。
-3. 用真实构建产物替换 `scripts/release-package.sh`。
+1. 先定义项目自己的本地验证命令。
+2. 添加最小 PR gate，运行真实测试、lint 或 smoke check。
+3. 有可交付产物后，再增加打包、SBOM 和 provenance。
 4. 技术栈和环境稳定后，再补具体的部署 job。
-5. 即使交付方式变化，SBOM 和 provenance 这类供应链能力也建议保留。
+5. 把所有流水线入口和制品说明同步写回本文件。
 
-## 默认 release 产物
+## 后续补回时注意
 
-当前 release 流水线会产出：
-
-- `release-manifest.json`
-- `repo-metadata.tgz`
-- `sbom.spdx.json`
-- 对 release artifact 生成的 GitHub artifact attestation
-
-也就是说，即使项目还没进入真实部署阶段，这个模板也已经把“可追溯的制品封装”这一步准备好了。
+- 不要恢复只有占位意义的 workflow。
+- 不要让 `Makefile` 暴露不存在或没人维护的命令。
+- 如果引入 release 自动化，同步更新 `docs/SUPPLY_CHAIN_SECURITY.md` 和 `docs/releases/README.md`。

@@ -10,4 +10,4 @@
 - 数据分级、脱敏与保留策略。
 - 对外 API、Webhook、文件上传和沙箱执行的规则。
 
-仓库级的依赖、SBOM 和 provenance 默认能力，统一写在 `docs/SUPPLY_CHAIN_SECURITY.md`。
+依赖、SBOM 和 provenance 的后续接入建议，统一写在 `docs/SUPPLY_CHAIN_SECURITY.md`。
