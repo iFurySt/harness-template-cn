@@ -4,7 +4,7 @@ English version: [`harness-template`](https://github.com/iFurySt/harness-templat
 
 ## 简介
 
-一个面向 Agent 协作开发的基础仓库模板，可以用来启动任何你想做的产品或服务。
+一个面向 Agent 协作开发的基础仓库模板，可以用来启动任何你想做的产品或服务。关于如何品尝，可以参考这篇文章：[日常Harness](https://www.ifuryst.com/blog/2026/daily-harness/)
 
 ## 快速开始
 
